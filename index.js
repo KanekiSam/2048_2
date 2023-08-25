@@ -322,23 +322,23 @@ class Game {
         dom.ontouchend = (e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (Math.abs(endY - startY) < 20) {
-            if (endX - startX > 50) {
+          if (Math.abs(endY - startY) < 10) {
+            if (endX - startX > 20) {
               // 右滑
               this.mergeBox('right');
             }
-            if (endX - startX < -50) {
+            if (endX - startX < -20) {
               // 左滑
               this.mergeBox('left');
             }
           }
 
-          if (Math.abs(endX - startX) < 20) {
-            if (endY - startY > 50) {
+          if (Math.abs(endX - startX) < 10) {
+            if (endY - startY > 20) {
               // 下滑
               this.mergeBox('bottom');
             }
-            if (endY - startY < -50) {
+            if (endY - startY < -20) {
               // 上滑
               this.mergeBox('top');
             }
