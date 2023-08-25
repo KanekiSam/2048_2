@@ -312,13 +312,10 @@ class Game {
   bindEvent() {
     const dom = document.querySelector('.content');
     dom.ontouchstart = (e) => {
-      e.preventDefault();
       const { clientX: startX, clientY: startY } = e.touches[0];
       dom.ontouchmove = (e) => {
-        e.preventDefault();
         const { clientX: endX, clientY: endY } = e.touches[0];
         dom.ontouchend = (e) => {
-          e.preventDefault();
           if (Math.abs(endY - startY) < 10) {
             if (endX - startX > 20) {
               // 右滑
