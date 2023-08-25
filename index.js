@@ -310,15 +310,16 @@ class Game {
     isMoving = false;
   }
   bindEvent() {
-    document.ontouchstart = (e) => {
+    const dom = document.querySelector('.content');
+    dom.ontouchstart = (e) => {
       e.preventDefault();
       e.stopPropagation();
       const { clientX: startX, clientY: startY } = e.touches[0];
-      document.ontouchmove = (e) => {
+      dom.ontouchmove = (e) => {
         e.preventDefault();
         e.stopPropagation();
         const { clientX: endX, clientY: endY } = e.touches[0];
-        document.ontouchend = (e) => {
+        dom.ontouchend = (e) => {
           e.preventDefault();
           e.stopPropagation();
           if (Math.abs(endY - startY) < 20) {
